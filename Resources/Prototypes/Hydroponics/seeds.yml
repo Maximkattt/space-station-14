@@ -280,6 +280,11 @@
   waterConsumption: 6
   lightTolerance: 6
   idealLight: 288
+  chemicals:
+    Resin:
+      Min: 4
+      Max: 5
+      PotencyDivisor: 5
 
 - type: seed
   id: tomato

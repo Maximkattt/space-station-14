@@ -99,6 +99,11 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/towercap.rsi
   - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Dionium
+          Quantity: 10
   - type: MeleeWeapon
     damage:
       types:

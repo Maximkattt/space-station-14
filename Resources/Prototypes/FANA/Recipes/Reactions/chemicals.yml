@@ -1,0 +1,11 @@
+- type: reaction
+  id: Dionium
+  reactants:
+    Resin:
+      amount: 3
+    THCOil:
+      amount: 2
+    Pax:
+      amount: 1
+  products:
+    Dionium: 1

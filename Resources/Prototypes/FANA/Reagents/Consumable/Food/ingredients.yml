@@ -1,0 +1,18 @@
+- type: reagent
+  id: Resin
+  name: reagent-name-resin
+  group: Foods
+  desc: reagent-desc-resin
+  physicalDesc: reagent-physical-desc-chewy
+  flavor: rice
+  color: white
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:AdjustReagent
+        reagent: Sugar
+        amount: 0.4
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.1

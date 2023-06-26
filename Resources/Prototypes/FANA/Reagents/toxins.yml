@@ -1,0 +1,73 @@
+- type: reagent
+  id: Dionium
+  name: a
+  desc: b
+  group: Medicine
+  physicalDesc: reagent-physical-desc-enigmatic
+  flavor: magical
+  color: "#b50ee8"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.45
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.75
+        sprintSpeedModifier: 0.75
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+          max: 35
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.45
+        sprintSpeedModifier: 0.45
+        conditions:
+        - !type:ReagentThreshold
+          min: 35
+          max: 65
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.05
+        sprintSpeedModifier: 0.05
+        conditions:
+        - !type:ReagentThreshold
+          min: 65
+      - !type:HealthChange
+        damage:
+          types:
+            Airloss: 0.5
+        conditions:
+        - !type:ReagentThreshold
+          min: 35
+          max: 65
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 4
+            Toxin: 4
+        conditions:
+        - !type:ReagentThreshold
+          min: 65
+      - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        refresh: false
+        type: Add
+        conditions:
+        - !type:ReagentThreshold
+          min: 35
+      - !type:PopupMessage #TODO
+        type: Local
+        messages:
+          - "dionium-effect-light-feel-calm"
+          - "dionium-effect-light-no-hurry"
+          - "dionium-effect-light-bustle-of-people"
+        probability: 0.5
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+          max: 35
+      - !type:GenericStatusEffect
+        key: Bradilalia
+        component: BradilaliaAccent
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
