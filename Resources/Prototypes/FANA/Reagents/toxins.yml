@@ -54,17 +54,65 @@
         conditions:
         - !type:ReagentThreshold
           min: 35
-      - !type:PopupMessage #TODO
+      - !type:PopupMessage
         type: Local
         messages:
-          - "dionium-effect-light-feel-calm"
-          - "dionium-effect-light-no-hurry"
-          - "dionium-effect-light-bustle-of-people"
-        probability: 0.5
+          - "dionium-effect-light-u-feel-peacefullness"
+          - "dionium-effect-light-rproblems-no-matter"
+          - "dionium-effect-light-calm-on-soul"
+          - "dionium-effect-light-uenjoyeverysecond"
+          - "dionium-effect-light-life-beautiful"
+          - "dionium-effect-light-mega-calm"
+          - "dionium-effect-light-people-funny"
+          - "dionium-effect-light-no-hurry-2"
+          - "dionium-effect-light-sueta"
+          - "dionium-effect-light-life-beautiful-2"
+        probability: 0.35
         conditions:
         - !type:ReagentThreshold
           min: 5
           max: 35
+      - !type:PopupMessage
+        type: Local
+        messages:
+          - "dionium-effect-medium-no-violence"
+          - "dionium-effect-medium-super-mega-calm"
+          - "dionium-effect-medium-cant-breath"
+          - "dionium-effect-medium-no-voilence-2"
+          - "dionium-effect-medium-going-to-river"
+          - "dionium-effect-medium-going-to-river-2"
+          - "dionium-effect-medium-polina"
+          - "dionium-effect-medium-too-fast"
+          - "dionium-effect-medium-eternity"
+          - "dionium-effect-medium-sueta-2"
+          - "dionium-effect-medium-stay-forever"
+          - "dionium-effect-medium-you-three"
+          - "dionium-effect-medium-spichki"
+          - "dionium-effect-medium-cant-breath-2"
+          - "dionium-effect-medium-to-see"
+          - "dionium-effect-medium-to-see-and-seek"
+        probability: 0.35
+        conditions:
+        - !type:ReagentThreshold
+          min: 35
+          max: 65
+      - !type:PopupMessage
+        type: Local
+        messages:
+          - "dionium-effect-ATAS-mudrost"
+          - "dionium-effect-ATAS-too-much-knowledge"
+          - "dionium-effect-ATAS-slow-heart"
+          - "dionium-effect-ATAS-wooding"
+          - "dionium-effect-ATAS-life"
+          - "dionium-effect-ATAS-stay-forever"
+          - "dionium-effect-ATAS-ustal"
+          - "dionium-effect-ATAS-eyes-closing"
+          - "dionium-effect-ATAS-legs-growing"
+          - "dionium-effect-ATAS-root"
+        probability: 0.35
+        conditions:
+        - !type:ReagentThreshold
+          min: 65
       - !type:GenericStatusEffect
         key: Bradilalia
         component: BradilaliaAccent
