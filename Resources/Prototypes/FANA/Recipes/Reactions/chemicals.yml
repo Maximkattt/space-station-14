@@ -9,3 +9,25 @@
       amount: 1
   products:
     Dionium: 1
+
+- type: reaction
+  id: Berserkson
+  reactants:
+    Diphenhydramine:
+      amount: 1
+    Epinephrine:
+      amount: 1
+    Protein:
+      amount: 1
+  products:
+    Berserkson: 3
+
+- type: reaction
+  id: Tester
+  reactants:
+    Ice:
+      amount: 1
+    Vodka:
+      amount: 1
+  products:
+    Berserkson: 2

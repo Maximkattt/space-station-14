@@ -1,15 +1,15 @@
 - type: reagent
   id: Dionium
-  name: a
-  desc: b
+  name: reagent-name-dionium
+  desc: reagent-desc-dionium
   group: Medicine
-  physicalDesc: reagent-physical-desc-enigmatic
-  flavor: magical
+  physicalDesc: reagent-physical-desc-wood
+  flavor: wood
   color: "#b50ee8"
   metabolisms:
     Poison:
       metabolismRate: 0.45
-      effects:ы
+      effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 0.75
         sprintSpeedModifier: 0.75
@@ -119,3 +119,47 @@
         conditions:
         - !type:ReagentThreshold
           min: 15
+
+- type: reagent
+  id: Berserkson
+  name: reagent-name-berserkson
+  desc: reagent-desc-berserkson
+  group: Medicine
+  physicalDesc: reagent-physical-desc-exhilarating
+  flavor: meaty
+  color: "#f22a07"
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.35
+      effects:
+      - !type:MovespeedModifier #SpeedUp at start
+        walkSpeedModifier: 1.25
+        sprintSpeedModifier: 1.25
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+          max: 30
+      - !type:MovespeedModifier #SpeedUp at rage mod
+        walkSpeedModifier: 1.35
+        sprintSpeedModifier: 1.35
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+      - !type:HealthChange #Chance of instakill at rage mod
+        damage:
+          types:
+            Airloss: 300
+        probability: 0.005
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
+      - !type:HealthChange #Instakill at overdose
+        damage:
+          types:
+            Airloss: 300
+        conditions:
+        - !type:ReagentThreshold
+          min: 40
+      - !type:AddBonusDamage
+        addeddamage: 5

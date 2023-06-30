@@ -1,0 +1,5 @@
+- type: flavor
+  id: wood
+  flavorType: Base
+  description: flavor-base-wood
+
