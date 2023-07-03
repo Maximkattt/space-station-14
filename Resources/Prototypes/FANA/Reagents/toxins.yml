@@ -56,6 +56,7 @@
           min: 35
       - !type:PopupMessage
         type: Local
+        visualType: Medium
         messages:
           - dionium-effect-light-u-feel-peacefullness
           - dionium-effect-light-rproblems-no-matter
@@ -74,6 +75,7 @@
           max: 35
       - !type:PopupMessage
         type: Local
+        visualType: Medium
         messages:
           - dionium-effect-medium-no-violence
           - dionium-effect-medium-super-mega-calm
@@ -98,6 +100,7 @@
           max: 65
       - !type:PopupMessage
         type: Local
+        visualType: Medium
         messages:
           - dionium-effect-ATAS-mudrost
           - dionium-effect-ATAS-too-much-knowledge
@@ -133,8 +136,8 @@
       metabolismRate: 0.35
       effects:
       - !type:MovespeedModifier #SpeedUp at start
-        walkSpeedModifier: 1.25
-        sprintSpeedModifier: 1.25
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
         conditions:
         - !type:ReagentThreshold
           min: 15
@@ -145,21 +148,53 @@
         conditions:
         - !type:ReagentThreshold
           min: 30
-      - !type:HealthChange #Chance of instakill at rage mod
+      - !type:HealthChange #Chance of damage at rage mod
         damage:
-          types:
-            Airloss: 300
+          groups:
+            Airloss: 30
         probability: 0.005
         conditions:
         - !type:ReagentThreshold
           min: 30
           max: 40
-      - !type:HealthChange #Instakill at overdose
+      - !type:HealthChange #Damage at overdose
         damage:
-          types:
-            Airloss: 300
+          groups:
+            Airloss: 15
         conditions:
         - !type:ReagentThreshold
           min: 40
       - !type:AddBonusDamage
-        addeddamage: 5
+        addeddamage: 8
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 1
+        type: Remove
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 1
+        type: Remove
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
+      - !type:Emote
+        emote: Scream
+        probability: 0.3
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+          max: 40
