@@ -1,0 +1,17 @@
+- type: entity
+  name: hallucination carp
+  id: HallucinationMobCarp
+  parent: MobCarp
+  description: It's a space carp.
+  components:
+    - type: Visibility
+      layer: 4
+    - type: MeleeWeapon
+      hidden: true
+      angle: 0
+      animation: WeaponArcBite
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      damage:
+        types:
+          Piercing: 0
